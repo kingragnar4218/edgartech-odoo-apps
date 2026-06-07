@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+ <data>
+
+    <!-- Search View -->
+    <record id="view_poa_hospital_managementital_patient_search" model="ir.ui.view">
+        <field name="name">poa_hospital_managementital.patient.search</field>
+        <field name="model">poa_hospital_managementital.patient</field>
+        <field name="arch" type="xml"> 
+            <search>
+                <field name="name" string="Patient Name"/>
+                <field name="age" string="Age"/>
+                <field name="gender" string="Gender"/>
+                <filter name="filter_male" string="Male" domain="[['gender', '=', 'male']]"/>
+                <filter name="filter_female" string="Female" domain="[['gender', '=', 'female']]"/>
+                <separator/>
+                <filter name="active" string="Archived" domain="[['active', '=', 'False' ]]"/>
+                <filter name="filter_kid" string="Kids" domain="[['age', '&lt;', 5]]"/>
+                
+                <group expand="0" string="Group By">
+                    <filter string="Female" name="group_by_female" context="{'group_by': 'gender'}" domain="[['gender', '=', 'female']]"/>
+                    <filter string="Male" name="group_by_male" context="{'group_by': 'gender'}" domain="[['gender', '=', 'male']]"/>
+                    <filter string="Gender" name="group_by_gender" context="{'group_by': 'gender'}"/>
+                    <filter string="Name" name="group_by_name" context="{'group_by': 'name'}"/>
+                    <filter string="Age" name="group_by_age" context="{'group_by': 'age'}"/>
+                    <filter string="ID Number" name="group_by_identification_number" context="{'group_by': 'identification_number'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- List View -->
+    <record id="view_poa_hospital_managementital_patient_list" model="ir.ui.view">
+        <field name="name">poa_hospital_managementital.patient.list</field>
+        <field name="model">poa_hospital_managementital.patient</field>
+        <field name="arch" type="xml"> 
+            <list>
+                <field name="name" string="Patient Name"/>
+                <field name="age" string="Age"/>
+                <field name="gender" string="Gender"/>
+                <field name="insurance" string="Insurance"/>
+                <field name="insurance_number" string="Insurance Number"/>
+                <field name="weight" string="Weight"/>
+                <field name="identification_number" string="ID Number"/>
+                <field name="blood_group"/>
+                <field name="allergies"/>
+                <field name="last_visit_date"/>
+                <field name="next_appointment_date"/>
+                <field name="emergency_contact_name"/>
+                <field name="medical_history"/>
+                <field name="emergency_contact_number"/>
+                <field name="emergency_relationship"/>
+                <field name="marital_status"/>
+                <field name="address"/>
+                <field name="occupation"/>
+                <field name="payment_method"/>           
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_poa_hospital_managementital_patient_form" model="ir.ui.view">
+        <field name="name">poa_hospital_managementital.patient.form</field>
+        <field name="model">poa_hospital_managementital.patient</field>
+        <field name="arch" type="xml"> 
+            <form>
+                <sheet>
+                <group name="poa_hospital_managementital_form" string="poa_hospital_managementital-form">
+                    <group>
+                        <field name="name" string="Patient Name"/>
+                        <field name="age" string="Age"/>
+                        <field name="gender" string="Gender"/>
+                        <field name="active" string="Active" invisible="1"/>
+                         <field name="insurance" string="Do you have insurance?"/>
+                        <field name="insurance_number" string="Insurance Number"/>
+                        <field name="weight" string="Weight"/>
+                        <field name="identification_number" string="ID Number"/>
+                        <field name="marital_status" string="Marital Status"/>
+                        <field name="address" string="Address"/>
+                    </group>
+                    <group>
+                        <field name="blood_group" string="Blood Group"/>
+                        <field name="allergies" string="Allergies"/>
+                        <field name="last_visit_date" string="Last Visit Date"/>
+                        <field name="next_appointment_date" string="Next Appointment Date"/>
+                        <field name="emergency_contact_name" string="Emergency Contact Name"/>
+                        <field name="medical_history" string="Medical History"/>
+                        <field name="emergency_contact_number" string="Emergency Contact Number"/>
+                        <field name="emergency_relationship" string="Emergency Relationship"/>
+                        <field name="occupation" string="Occupation"/>
+                        <field name="payment_method" string="Payment Method"/>           
+                    </group>
+                </group>
+                    
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_poa_hospital_managementital_patient" model="ir.actions.act_window">
+        <field name="name">Patients</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">poa_hospital_managementital.patient</field>
+        <field name="view_mode">list,form,kanban</field>
+        <field name="context">{}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first patient!
+            </p>
+        </field>
+    </record>
+    
+
+    <!-- Menu Item -->
+    <menuitem
+        id="menu_patient"
+        name="Patient"
+        parent="menu_patient_master"
+        action="action_poa_hospital_managementital_patient"
+        sequence="2"/>
+ </data>
+</odoo>
