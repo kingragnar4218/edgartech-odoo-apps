@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+   <record id="view_poa_hospital_managementital_doctor_list" model="ir.ui.view">
+    <field name="name">poa_hospital_managementital.doctor.list</field>
+    <field name="model">poa_hospital_managementital.doctor</field>
+    <field name="arch" type="xml">
+        <list>
+            <field name="name"/>
+            <field name="age"/>
+            <field name="gender"/>
+            <field name="contact"/>
+            <field name="doctor_id"/>
+            <field name="budge_number"/>
+            <field name="category"/>
+            <field name="specialization"/>
+            <field name="years_of_experience"/>
+            <field name="working_hours"/>
+        </list>
+    </field>
+</record>
+
+<record id="view_poa_hospital_managementital_doctor_form" model="ir.ui.view">
+    <field name="name">poa_hospital_managementital.doctor.form</field>
+    <field name="model">poa_hospital_managementital.doctor</field>
+    <field name="arch" type="xml">
+        <form string="Doctor Form">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                    <field name="age"/>
+                    <field name="gender"/>
+                    <field name="contact"/>
+                    <field name="doctor_id"/>
+                    <field name="budge_number"/>
+                    <field name="category"/>
+                    <field name="specialization"/>
+                    <field name="years_of_experience"/>
+                    <field name="working_hours"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="view_poa_hospital_managementital_doctor_search" model="ir.ui.view">
+    <field name="name">poa_hospital_managementital.doctor.search</field>
+    <field name="model">poa_hospital_managementital.doctor</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="category"/>
+            <field name="specialization"/>
+            <field name="years_of_experience"/>
+        </search>
+    </field>
+</record>
+
+<record id="view_poa_hospital_managementital_doctor_kanban" model="ir.ui.view">
+    <field name="name">poa_hospital_managementital.doctor.kanban</field>
+    <field name="model">poa_hospital_managementital.doctor</field>
+    <field name="arch" type="xml">
+        <kanban class="o_kanban_view">
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click">
+                        <strong><field name="name"/></strong>
+                        <div><field name="specialization"/></div>
+                        <div><field name="years_of_experience"/></div>
+                        <div><field name="working_hours"/></div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+
+<record id="action_poa_hospital_managementital_doctor" model="ir.actions.act_window">
+    <field name="name">Doctors</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">poa_hospital_managementital.doctor</field>
+    <field name="view_mode">list,form,kanban</field>
+    <field name="domain">[("category", "=", "doctor")]</field>
+    <field name="context">{"default_category": "doctor"}</field>
+    <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+            Create your first doctor!
+        </p>
+    </field>
+</record>
+
+<menuitem
+    id="menu_doctor"
+    name="Doctors"
+    parent="menu_poa_hospital_managementital_root"
+    action="action_poa_hospital_managementital_doctor"
+    sequence="30"/>
+
+
+    </data>
+</odoo>

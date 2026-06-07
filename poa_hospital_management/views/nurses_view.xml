@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <!-- Action -->
+        <record id="action_poa_hospital_managementital_nurses" model="ir.actions.act_window">
+            <field name="name">Nurses</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">poa_hospital_managementital.nurse</field>
+            <field name="view_mode">list,form,kanban</field>
+            <field name="domain">[('gender', '=', 'female')]</field>
+            <field name="context">{'default_gender': 'female'}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create your first Female patient!
+                </p>
+            </field>
+        </record>
+
+        <!-- Menu Item -->
+        <menuitem
+            id="menu_nurse"
+            name="Nurses"
+            parent="menu_poa_hospital_managementital_root"
+            action="action_poa_hospital_managementital_nurses"
+            sequence="20"/>
+    </data>
+</odoo>

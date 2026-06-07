@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EdgarTech | Odoo Module</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    /* HERO */
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a, #1e293b, #2563eb);
+      padding: 100px 30px;
+      border-radius: 25px;
+      margin-top: 30px;
+      color: white;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      top: -100px;
+      right: -100px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      opacity: .9;
+    }
+
+    .badges {
+      margin-top: 25px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, .15);
+      backdrop-filter: blur(10px);
+      margin-right: 10px;
+      font-weight: 600;
+    }
+
+    .price {
+      background: #22c55e;
+    }
+
+    /* BRAND */
+
+    .brand {
+      margin-top: 40px;
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, .08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .brand h2 {
+      font-size: 32px;
+      color: #0f172a;
+    }
+
+    .brand a {
+      text-decoration: none;
+      color: #2563eb;
+      font-weight: 600;
+    }
+
+    /* SECTION */
+
+    .section {
+      margin-top: 70px;
+    }
+
+    .section-title {
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 35px;
+      color: #0f172a;
+    }
+
+    /* FEATURES */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+    }
+
+    /* INSTALLATION */
+
+    .install {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+    }
+
+    .step {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .step span {
+      background: #2563eb;
+      color: white;
+      width: 35px;
+      height: 35px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-right: 15px;
+      font-weight: 700;
+    }
+
+    /* SUPPORT */
+
+    .support {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: white;
+      padding: 50px;
+      border-radius: 25px;
+      text-align: center;
+    }
+
+    .support h2 {
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .support a {
+      color: white;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      margin-top: 60px;
+      text-align: center;
+      padding: 30px;
+      color: #64748b;
+    }
+
+    .footer strong {
+      color: #0f172a;
+    }
+
+    @media(max-width:768px) {
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .brand {
+        text-align: center;
+        justify-content: center;
+        gap: 20px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <h1> Odoo Business Management Module</h1>
+
+      <p>
+        A powerful and modern Odoo solution developed by Edgar Technology
+        to streamline your business operations and improve productivity.
+      </p>
+
+      <div class="badges">
+        <span class="badge">odoo 19 Ready</span>
+        <span class="badge">Enterprise Compatible</span>
+        <span class="badge price">FREE</span>
+      </div>
+
+    </section>
+
+    <!-- COMPANY -->
+
+    <section class="brand">
+
+      <div>
+        <h2>Edgar Technology</h2>
+        <p>Innovative Odoo Solutions for Modern Businesses</p>
+      </div>
+
+      <div>
+        🌐 <a href="https://www.itsedgar.tech/" target="_blank">
+          www.itsedgar.tech
+        </a>
+      </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="section">
+
+      <h2 class="section-title">✨ Key Features</h2>
+
+      <div class="features">
+
+        <div class="card">
+          <div class="icon">📊</div>
+          <h3>Smart Dashboard</h3>
+          <p>
+            Real-time business analytics and insights.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">⚡</div>
+          <h3>Fast Performance</h3>
+          <p>
+            Optimized architecture for smooth operation.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔒</div>
+          <h3>Secure Access</h3>
+          <p>
+            Role-based permissions and security controls.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📱</div>
+          <h3>Responsive Design</h3>
+          <p>
+            Works perfectly across desktop, tablet and mobile.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🔄</div>
+          <h3>Easy Integration</h3>
+          <p>
+            Integrates seamlessly with existing Odoo modules.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">☁️</div>
+          <h3>Cloud Ready</h3>
+          <p>
+            Fully compatible with cloud and on-premise deployments.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- INSTALLATION -->
+
+    <section class="section">
+
+      <h2 class="section-title">⚙ Installation Guide</h2>
+
+      <div class="install">
+
+        <div class="step">
+          <span>1</span>
+          Copy the module folder into your Odoo addons directory.
+        </div>
+
+        <div class="step">
+          <span>2</span>
+          Restart the Odoo server.
+        </div>
+
+        <div class="step">
+          <span>3</span>
+          Update the Apps List.
+        </div>
+
+        <div class="step">
+          <span>4</span>
+          Search the module name and click Install.
+        </div>
+
+        <div class="step">
+          <span>5</span>
+          Configure settings and start using the application.
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- WHY EDGARTECH -->
+
+    <section class="section">
+
+      <h2 class="section-title">🏆 Why EdgarTech?</h2>
+
+      <div class="features">
+
+        <div class="card">
+          <h3>Experienced Team</h3>
+          <p>
+            Professional Odoo developers delivering scalable business solutions.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Custom Development</h3>
+          <p>
+            Tailor-made modules and integrations according to business requirements.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Reliable Support</h3>
+          <p>
+            Dedicated support and maintenance for your Odoo ecosystem.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- SUPPORT -->
+
+    <section class="section">
+
+      <div class="support">
+
+        <h2>Need Support?</h2>
+
+        <p>
+          For customization, implementation or technical assistance,
+          contact Edgar Technology.
+        </p>
+
+        <br>
+
+        <p>
+          🌐
+          <a href="https://www.itsedgar.tech/" target="_blank">
+            www.itsedgar.tech
+          </a>
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+      © 2026 <strong>Edgar Technology (EdgarTech)</strong><br>
+
+      Building Powerful Odoo Solutions for Businesses Worldwide
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
